@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SendBulkMailController;
+use App\Http\Controllers\EloquentController;
+
 
 
 /*
@@ -20,4 +22,12 @@ Route::get('/', function () {
 });
 
 Route::get('send-bulk-mail', [SendBulkMailController::class, 'sendBulkMail'])->name('send-bulk-mail');
+Route::get('view-form', [EloquentController::class, 'viewForm']);
+Route::POST('/relationship', [EloquentController::class, 'createRecord'])->name('create');
+Route::get('get-form', [EloquentController::class, 'getData']);
+Route::POST('/comments', [EloquentController::class, 'commentsRecord']);
+
+
+
+
 
