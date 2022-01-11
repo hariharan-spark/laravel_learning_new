@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SendBulkMailController;
 use App\Http\Controllers\EloquentController;
+use App\Http\Controllers\RegisterController;
+
 
 
 
@@ -26,6 +28,17 @@ Route::get('view-form', [EloquentController::class, 'viewForm']);
 Route::POST('/relationship', [EloquentController::class, 'createRecord'])->name('create');
 Route::get('get-form', [EloquentController::class, 'getData']);
 Route::POST('/comments', [EloquentController::class, 'commentsRecord']);
+
+
+Route::get('register', [RegisterController::class, 'create']);
+Route::post('store', [RegisterController::class, 'store']);
+Route::Post('user-update', [RegisterController::class, 'userUpdate']);
+Route::get('user-delete/{id}', [RegisterController::class, 'userDelete']);
+
+
+
+
+
 
 
 
